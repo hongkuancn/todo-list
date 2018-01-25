@@ -1,22 +1,32 @@
 import React from "react";
+import PropTypes from 'prop-types';
+import ListEdit from './ListEdit';
+import ListNoEdit from './ListNoEdit';
 
 class ListItem extends React.Component {
+
   render(){
+
+    const list = (
+      this.props.items.map(item => {
+        if (item.isEditing){
+          return <ListEdit key={item._id} item={item} />
+        }
+        return <ListNoEdit key={item._id} item={item} />
+      })
+    );
+
     return (
       <ul className="col-md-4 offset-md-4" >
-        <li>
-          <span>Make bed</span>
-          <button className="btn btn-primary btn-sm float-right">Delete</button>
-          <button className="btn btn-primary btn-sm float-right">Edit</button>
-        </li>
-        <li>
-          <input type="text" placeholder="do the laundry" />
-          <button className="btn btn-primary btn-sm float-right">Cancel</button>
-          <button className="btn btn-primary btn-sm float-right">Save</button>
-        </li>
+        {list}
       </ul>
     )
+
   }
 };
+
+ListItem.propTypes = {
+  items: PropTypes.array.isRequired
+}
 
 export default ListItem;
