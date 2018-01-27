@@ -23,17 +23,16 @@ class CreateForm extends React.Component {
     if(this.state.item === '') {
       errors.empty = "The input can't be empty!";
       this.setState({ errors })
+    } else {
+      const { items } = this.props;
+      items.map((item, index) => {
+        if(item.item === this.state.item){
+          errors.exist = "Sorry, the item has already existed. Try another?"
+          this.setState({ errors });
+        }
+        return true;
+      })
     }
-
-    const { items } = this.props;
-    items.map((item, index) => {
-      console.log(item.item === this.state.item);
-      if(item.item === this.state.item){
-        errors.exist = "Sorry, the item has already existed. Try another?"
-        this.setState({ errors });
-      }
-      return true;
-    })
 
     const isValid = Object.keys(errors).length === 0;
 
@@ -45,7 +44,6 @@ class CreateForm extends React.Component {
   }
 
   render(){
-
     return (
       <div>
         <form className="col-md-4 offset-md-4" onSubmit={this.handleSubmit}>
@@ -53,7 +51,7 @@ class CreateForm extends React.Component {
             <input
               type="text"
               className="form-control"
-              placeholder="Make your day extraordinary"
+              placeholder="Make your day special"
               name="item"
               value={this.state.item}
               onChange={this.handleChange}
@@ -71,10 +69,4 @@ CreateForm.propTypes = {
   createTodo: PropTypes.func.isRequired
 }
 
-function mapStateToProps(state){
-  return {
-    items: state.items
-  }
-}
-
-export default connect(mapStateToProps, { createTodo })(CreateForm);
+export default connect(null, { createTodo })(CreateForm);

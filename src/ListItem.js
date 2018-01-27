@@ -7,18 +7,25 @@ class ListItem extends React.Component {
 
   render(){
 
+    const { items } = this.props;
+
     const list = (
-      this.props.items.map(item => {
-        if (item.isEditing){
+      items.map(item => {
+        if(item.isEditing){
           return <ListEdit key={item._id} item={item} />
+        } else {
+          return <ListNoEdit key={item._id} item={item} />
         }
-        return <ListNoEdit key={item._id} item={item} />
       })
     );
 
+    const emptyList = (
+      <p>Add some todo items now!</p>
+    )
+
     return (
       <ul className="col-md-4 offset-md-4" >
-        {list}
+        {items.length > 0 ? list : emptyList}
       </ul>
     )
 

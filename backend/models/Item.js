@@ -6,10 +6,6 @@ const ItemSchema = new Schema({
   item: {
     type: String
   },
-  hasDone: {
-    type: Boolean,
-    default: false
-  },
   isEditing: {
     type: Boolean,
     default: false

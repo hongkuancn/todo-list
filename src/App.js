@@ -27,6 +27,7 @@ class App extends Component {
         <h1 className="text-center">To-do List</h1>
         <CreateForm items={this.props.items}/>
         <ListItem items={this.props.items}/>
+        <div className="text-center text-muted">&copy; Hongkuan Wang</div>
       </div>
     );
   }

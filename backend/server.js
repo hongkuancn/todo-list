@@ -5,7 +5,7 @@ import Item from './models/Item';
 
 const app = express();
 app.use(bodyParser.json());
-const dbUrl = "mongodb://localhost/todolist";
+const dbUrl = "mongodb://user:user123@ds217138.mlab.com:17138/todolist";
 
 mongoose.connect(dbUrl);
 mongoose.Promise = global.Promise;
@@ -16,13 +16,13 @@ app.get('/api/list', (req, res, next) => {
   }).catch(next)
 })
 
-app.post('/api/list', (req, res, next) => {
+app.post('/api/li/create', (req, res, next) => {
   Item.create(req.body).then((item) => {
     res.send(item)
   }).catch(next)
 });
 
-app.put('/api/li/save', (req, res, next) => {
+app.put('/api/li/save', (req, res) => {
   const id = req.body._id;
   const value = req.body.value;
   Item.findByIdAndUpdate({_id: id}, {item: value}, () => {
@@ -30,6 +30,21 @@ app.put('/api/li/save', (req, res, next) => {
       res.json(item)
     })
   });
+});
+
+app.delete('/api/li/delete', (req, res) => {
+  const id = req.body._id;
+  Item.findOneAndRemove({_id: id}, (err, item) => {
+      res.json(item)
+  });
+})
+
+app.use((req, res) => {
+  res.status(404).json({
+    errors: {
+      global: "Still working on it. Please try it later when we implement it"
+    }
+  })
 })
 
 app.listen(8080, ()=>{
