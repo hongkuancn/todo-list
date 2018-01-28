@@ -18,6 +18,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
+    "postinstall": "npm install --prefix backend",
     "start": "concurrently \"cd backend && npm start\" \"cd ./ && npm run dev \" "
   },
   "proxy": "http://localhost:8080"
