@@ -2,9 +2,16 @@ import express from 'express';
 import mongoose from 'mongoose';
 import bodyParser from 'body-parser';
 import Item from './models/Item';
+import path from 'path';
 
 const app = express();
 app.use(bodyParser.json());
+
+// get reference to the client build directory
+const staticFiles = express.static(path.join(__dirname, '../build'))
+// pass the static files (react app) to the express app.
+app.use(staticFiles)
+
 const dbUrl = "mongodb://user:user123@ds217138.mlab.com:17138/todolist";
 
 mongoose.connect(dbUrl);
@@ -47,6 +54,6 @@ app.use((req, res) => {
   })
 })
 
-app.listen(8080, ()=>{
+app.listen(process.env.PORT || 8080, ()=>{
   console.log("Server is running on localhost:8080");
 })
