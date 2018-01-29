@@ -1,6 +1,10 @@
 # Todo List
 
-This is a Todo List App using React, Redux, Node.js and MongoDB. This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app). It has been deployed both on Amazon Web Services (AWS) and Heroku. <br />
+This is a full-stack Todo List App using React, Redux, ExpressJS and MongoDB.
+
+This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
+
+It has been deployed both on Amazon Web Services (AWS) and Heroku. <br />
 AWS: [ec2-54-93-98-230.eu-central-1.compute.amazonaws.com](ec2-54-93-98-230.eu-central-1.compute.amazonaws.com). <br />
 Heroku: [https://quiet-fortress-18081.herokuapp.com](https://quiet-fortress-18081.herokuapp.com).
 
@@ -18,8 +22,22 @@ Heroku: [https://quiet-fortress-18081.herokuapp.com](https://quiet-fortress-1808
 
 * User Story: I can mark a task as completed by clicking the task.
 
-## Running the app locally
+## Knowledge and skills in the project
 
+* JavaScript with ES2015 syntax
+
+* React, Redux
+
+* NodeJS, ExpressJS, REST API
+
+* MongoDB, Mongoose, MongoLAB
+
+* Heroku, AWS, Linux server environment
+
+* Bootstrap 4
+
+
+## Running the app on a local machine
 
 Clone this repo:
 
@@ -36,7 +54,7 @@ $ cd todo-list
 Install all dependancies:
 
 ```
-$ npm install && npm install --prefix backend
+$ npm install
 ```
 
 Start the app:
