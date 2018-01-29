@@ -8,7 +8,7 @@ const app = express();
 app.use(bodyParser.json());
 
 // get reference to the client build directory
-const staticFiles = express.static(path.join(__dirname, '../../build'))
+const staticFiles = express.static(path.join(__dirname, '../../build'));
 // pass the static files (react app) to the express app.
 app.use(staticFiles)
 
