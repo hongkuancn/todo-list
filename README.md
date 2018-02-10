@@ -10,6 +10,8 @@ Heroku: [https://quiet-fortress-18081.herokuapp.com](https://quiet-fortress-1808
 
 There are 424 lines of JavaScript code in the project.
 
+## Functions
+
 * User Story: I can create a new task to the list.
 
 * User Story: I can see all the tasks in the list.
