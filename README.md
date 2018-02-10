@@ -8,6 +8,8 @@ It has been deployed both on Amazon Web Services (AWS) and Heroku. <br />
 AWS: [http://ec2-54-93-98-230.eu-central-1.compute.amazonaws.com](http://ec2-54-93-98-230.eu-central-1.compute.amazonaws.com). <br />
 Heroku: [https://quiet-fortress-18081.herokuapp.com](https://quiet-fortress-18081.herokuapp.com).
 
+There are 424 lines of JavaScript code in the project.
+
 * User Story: I can create a new task to the list.
 
 * User Story: I can see all the tasks in the list.
