@@ -1,5 +1,7 @@
 # Todo List
 
+*__Note__: To look at a newly-built full-stack Voting App project using React, Redux, ExpressJS and MongoDB, please click [here](https://github.com/hongkuancn/fccproj-votingapp).*
+
 This is a full-stack Todo List App using React, Redux, ExpressJS and MongoDB.
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
